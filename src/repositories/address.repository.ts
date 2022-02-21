@@ -11,12 +11,12 @@ class AddressRepository {
   ): Promise<AddressEntity> {
     const repository = getRepository(AddressEntity);
 
-    const trainerEntity = repository.create({
+    const addressEntity = repository.create({
       name: address,
       info: locationInfo,
     });
 
-    return await repository.save(trainerEntity);
+    return await repository.save(addressEntity);
   }
 
   async findByAddress(address: string): Promise<Nullable<AddressEntity>> {

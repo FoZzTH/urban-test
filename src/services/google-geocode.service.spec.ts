@@ -5,8 +5,8 @@ import { googleGeocodeService } from './google-geocode.service';
 import {
   successResponse,
   zeroResultsResponse,
-} from '../../static/services/google-geocode/serverResponses';
-import { successResult } from '../../static/services/google-geocode/result';
+} from '../../__mocks__/services/google-geocode/serverResponses';
+import { successResult } from '../../__mocks__/services/google-geocode/result';
 
 describe('Google geocode service', () => {
   describe('getAddressInfo', () => {

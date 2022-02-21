@@ -19,8 +19,6 @@ export default class Server {
   }
 
   private initialization(): void {
-    this.expressServer.use(express.json());
-
     this.expressServer.use(router);
     this.expressServer.use(errorHandler);
   }

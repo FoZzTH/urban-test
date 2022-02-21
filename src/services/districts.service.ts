@@ -4,6 +4,7 @@ import { District } from '../types/district.type';
 
 class DistrictsService {
   async getDistricts(): Promise<District[]> {
+    // TODO: add upcoming data validation
     return districts.features;
   }
 }

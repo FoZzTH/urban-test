@@ -5,11 +5,9 @@ import { AddressStatus } from '../types/addressStatus.enum';
 
 class AddressController {
   async getAddressInfo(req: Request, res: Response) {
-    const { body } = req;
+    const address = req.query.address as string;
 
-    const addressInfo = await addressService.getAddressInfo(
-      body.address.toLowerCase()
-    );
+    const addressInfo = await addressService.getAddressInfo(address);
     if (addressInfo.status === AddressStatus.NOT_FOUND) {
       return res.status(StatusCodes.NOT_FOUND).json({
         status: addressInfo.status,
@@ -19,7 +17,7 @@ class AddressController {
 
     return res.status(StatusCodes.OK).json({
       status: addressInfo.status,
-      search: body.address,
+      search: address,
       location: addressInfo.location,
     });
   }

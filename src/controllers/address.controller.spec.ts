@@ -7,7 +7,7 @@ import { StatusCodes } from 'http-status-codes';
 describe('Address controller', () => {
   describe('getAddressInfo', () => {
     test('Should specific response if address info is not found', async () => {
-      const req = { body: { address: 'Address' } };
+      const req = { query: { address: 'Address' } };
       const res = { status: jest.fn().mockReturnThis(), json: jest.fn() };
 
       const serviceMock = {
@@ -19,7 +19,7 @@ describe('Address controller', () => {
         .mockResolvedValueOnce(serviceMock);
 
       await addressController.getAddressInfo(
-        req as Request,
+        req as unknown as Request,
         res as unknown as Response
       );
 
@@ -32,7 +32,7 @@ describe('Address controller', () => {
     test('Should specific response if address info is found', async () => {
       const address = 'Address';
 
-      const req = { body: { address } };
+      const req = { query: { address } };
       const res = { status: jest.fn().mockReturnThis(), json: jest.fn() };
 
       const serviceMock = {
@@ -49,7 +49,7 @@ describe('Address controller', () => {
         .mockResolvedValueOnce(serviceMock);
 
       await addressController.getAddressInfo(
-        req as Request,
+        req as unknown as Request,
         res as unknown as Response
       );
 

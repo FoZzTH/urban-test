@@ -9,7 +9,7 @@ import * as districts from '../../public/formatted-districts.json';
 import { AddressStatus } from '../types/addressStatus.enum';
 import { AddressStatusMessage } from '../types/addressStatusMessage.enum';
 
-import { cacheData } from '../../static/services/address/cacheData';
+import { cacheData } from '../../__mocks__/services/address/cacheData';
 
 describe('Address service', () => {
   describe('getAddressInfo', () => {

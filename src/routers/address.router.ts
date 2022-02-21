@@ -7,8 +7,8 @@ import { validator } from '../utils/validator.util';
 
 export const addressRouter = Router();
 
-addressRouter.post(
+addressRouter.get(
   '/',
-  validator.body(addressSchema),
+  validator.query(addressSchema),
   tryCatch(addressController.getAddressInfo)
 );
